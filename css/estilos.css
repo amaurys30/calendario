@@ -1,0 +1,162 @@
+body{
+    margin: 0%;
+}
+
+.gridContenedor{
+    display: grid;
+    grid-template-columns: 20% auto;
+    grid-template-rows: 85px 540px;
+
+}
+
+/* primer div */
+.divMenu{
+    grid-column: span 2;
+    display: flex;
+    border: solid 1px;
+    padding-left: 10px;
+    align-items: center;
+}
+
+.divMenu img{
+    width: 60px;
+    height: 60px;
+}
+
+.mesSeleccionado{
+    margin-left: 100px;
+    margin-right: 25%;
+}
+
+.divSeleccion{
+    margin-right: 30px;
+}
+
+.divSeleccion select{
+    height: 40px;
+    width: 100px;
+    border-radius: 10px;
+}
+
+/* segundo div */
+.divEvento{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid 1px;
+    border-top: none;
+    gap: 10px;
+}
+
+.divEvento button{
+    
+    margin-top: 30px;
+    width: 45%;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.divListaEvento ol{
+    list-style: none;
+    padding-left: 0;
+    li{
+        margin-top: 15px;
+    }
+}
+
+/* tercer div */
+.divMeses{
+    text-align: center;
+}
+
+.divMeses ol{
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    padding: 0;
+    margin: 0;
+}
+
+.divMeses li{
+    /*border: solid 1px;*/
+    height: 90px;
+}
+
+.primerDiaEnero{
+    grid-column-start: 1;
+}
+
+.primerDiaFebreo{
+    grid-column-start: 4;
+}
+
+.primerDiaMarzo{
+    grid-column-start: 5;
+}
+
+.primerDiaAbril{
+    grid-column-start: 1;
+}
+.primerDiaMayo{
+    grid-column-start: 3;
+}
+.primerDiaJunio{
+    grid-column-start: 6;
+}
+.primerDiaJulio{
+    grid-column-start: 1;
+}
+.primerDiaAgosto{
+    grid-column-start: 4;
+}
+.primerDiaSeptiembre{
+    grid-column-start: 7;
+}
+.primerDiaOctubre{
+    grid-column-start: 2;
+}
+.primerDiaNoviembre{
+    grid-column-start: 5;
+}
+.primerDiaDiciembre{
+    grid-column-start: 7;
+}
+
+/*estilos para dias*/
+.divDias{
+    text-align: center;
+}
+
+.divDias ol{
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0;
+    margin: 0;
+}
+
+.divDias li{
+    border-right: solid 1px;
+    border-bottom: solid 1px;
+    height: 90px;
+}
+
+/* estilos para formulario */
+.flexContenedor{
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.divContenedor{
+    width: 50%;
+
+}
+.table{
+    width: 100%;
+    border: 1px solid black;
+}
+
+.table td{
+    text-align: center;
+}

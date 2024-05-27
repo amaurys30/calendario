@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <script src="js/utilidades.js"></script>
+    <script src="js/gestionevento.js"></script>
+
+    <script>
+        function eliminarDiv() {
+            // Obtener el div principal
+            var divPrincipal = document.getElementById("divPrincipal")
+            // Buscar y eliminar el div existente si está presente
+            var divExistente = document.getElementById("nuevoDivId");
+            if (divExistente) {
+                divPrincipal.removeChild(divExistente);
+            }
+        }
+
+        function seleccionMes() {
+            var seleccion = document.getElementById("mes").value
+            if (seleccion === "enero") {
+                eliminarDiv()
+                crearEnero();
+            } else if (seleccion == "febrero") {
+                eliminarDiv()
+                crearFebrero()
+            } else if (seleccion == "marzo") {
+                eliminarDiv()
+                crearMarzo()
+            } else if (seleccion == "abril") {
+                eliminarDiv()
+                crearAbril()
+            } else if (seleccion == "mayo") {
+                eliminarDiv()
+                crearMayo()
+            } else if (seleccion == "junio") {
+                eliminarDiv()
+                crearJunio()
+            } else if (seleccion == "julio") {
+                eliminarDiv()
+                crearJulio()
+            } else if (seleccion == "agosto") {
+                eliminarDiv()
+                crearAgosto()
+            } else if (seleccion == "septiembre") {
+                eliminarDiv()
+                crearSeptiembre()
+            } else if (seleccion == "octubre") {
+                eliminarDiv()
+                crearOctubre()
+            } else if (seleccion == "noviembre") {
+                eliminarDiv()
+                crearNoviembre()
+            } else if (seleccion == "diciembre") {
+                eliminarDiv()
+                crearDiciembre()
+            } else {
+                eliminarDiv()
+                crearJunio()
+            }
+
+        }
+
+        function seleccionCambio() {
+            var seleccion = document.getElementById("fecha").value;
+            if (seleccion === "dia") {
+                eliminarDiv()
+                agregarDias()
+            } else if (seleccion === "mes") {
+                eliminarDiv()
+                seleccionMes()
+            } else if (seleccion === "anio") {
+                eliminarDiv()
+                agregarDiv()
+            } else {
+                eliminarDiv()
+                seleccionMes()
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <script>
+        // Ejecuta la función al cargar la página
+        window.onload = seleccionMes
+        window.onload = crearJunio
+
+        var eventos = JSON.parse(localStorage.getItem("eventos") || "[]")
+        var fechasHoras = []
+
+        for (let i = 0; i < eventos.length; i++) {
+            fechasHoras.push(eventos[i].fechaHora)
+        }
+        /*
+                function obtenerMeses() {
+                    const meses = fechasHoras.map(fechaHora => {
+                        const fecha = new Date(fechaHora);
+                        return fecha.getMonth() + 1; // Ajuste para que enero sea 1 y diciembre sea 12
+                    });
+        
+                    //mostrarMeses(meses);
+                    return meses
+                }
+        
+                function obtenerDias() {
+                    const dias = fechasHoras.map(fechaHora => {
+                        const fecha = new Date(fechaHora);
+                        return fecha.getDate(); // Obtener el día del mes
+                    });
+        
+                    return dias
+                }
+        
+                function adicionarEventoAMes() {
+                    var meses = obtenerMeses()
+        
+                    meses.forEach(mes => {
+                        switch (mes) {
+                            case 1:
+                                console.log("enero")
+                                break;
+                            case 2:
+                                console.log("febrero")
+                                break;
+                            case 3:
+                                console.log("marzo")
+                                break;
+                            case 4:
+                                console.log("abril")
+                                break;
+                            case 5:
+                                console.log("mayo")
+                                break;
+                            case 6:
+                                console.log("junio")
+                                break;
+                            case 7:
+                                console.log("julio")
+                                break;
+                            case 8:
+                                console.log("agosto")
+                                break;
+                            case 9:
+                                console.log("septiembre")
+                                break;
+                            case 10:
+                                console.log("octubre")
+                                break;
+                            case 11:
+                                console.log("noviembre")
+                                break;
+                            case 12:
+                                console.log("diciembre")
+                                break;
+                            default:
+                                console.log("ningun mes")
+                                break;
+                        }
+                    })
+                }
+                
+                function mostrarMeses(meses) {
+                    const listaMeses = document.getElementById('listaMeses');
+                    listaMeses.innerHTML = '';
+        
+                    meses.forEach(mes => {
+                        const li = document.createElement('li');
+                        li.textContent = mes;
+                        listaMeses.appendChild(li);
+                    });
+                }
+        */
+    </script>
+
+    <div class="gridContenedor" id="divPrincipal">
+
+        <div class="divMenu">
+            <img src="recursos/imagenes/calendario.png" alt="">
+            <h1>Calendario 2024</h1>
+            <!-- <button>Hoy</button> -->
+            <h2 id="textMes" class="mesSeleccionado">Junio</h2>
+            <div class="divSeleccion">
+                <label for="fecha">Seleccionar Vista:</label>
+                <select id="fecha" name="fecha" onchange="seleccionCambio()">
+                    <option value="mes">Mes</option>
+                    <option value="dia">Dia</option>
+                    <option value="anio">Año</option>
+                </select>
+            </div>
+
+            <div class="divSeleccion">
+                <label for="mes">Seleccionar Mes:</label>
+                <select id="mes" name="mes" onchange="seleccionMes()">
+                    <option value="enero">Enero</option>
+                    <option value="febrero">Febrero</option>
+                    <option value="marzo">Marzo</option>
+                    <option value="abril">Abril</option>
+                    <option value="mayo">Mayo</option>
+                    <option value="junio">Junio</option>
+                    <option value="julio">Julio</option>
+                    <option value="agosto">Agosto</option>
+                    <option value="septiembre">Septiembre</option>
+                    <option value="octubre">Octubre</option>
+                    <option value="noviembre">Noviembre</option>
+                    <option value="diciembre">Diciembre</option>
+
+                </select>
+            </div>
+
+
+        </div>
+
+        <div class="divEvento">
+            <button onclick="window.location.href='html/gestioneventos.html'">Crear evento</button>
+            <button onclick="listarEventos()">Ver eventos </button>
+            <div class="divListaEvento">
+                <ol id="listarEventos"></ol>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
