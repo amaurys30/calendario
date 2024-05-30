@@ -99,15 +99,16 @@ function crearAnio() {
 
 //vista de meses
 
-var eventos = JSON.parse(localStorage.getItem("eventos") || "[]")
+
+
+
+function crearEnero() {
+    var eventos = JSON.parse(localStorage.getItem("eventos") || "[]")
     var fechasHoras = []
 
     for (let i = 0; i < eventos.length; i++) {
         fechasHoras.push(eventos[i].fechaHora)
     }
-
-
-function crearEnero() {
 
     var listaOrdenada = crearNodo("ol")
 
@@ -170,6 +171,12 @@ function crearEnero() {
 }
 
 function crearFebrero() {
+    var eventos = JSON.parse(localStorage.getItem("eventos") || "[]")
+    var fechasHoras = []
+
+    for (let i = 0; i < eventos.length; i++) {
+        fechasHoras.push(eventos[i].fechaHora)
+    }
 
     var listaOrdenada = crearNodo("ol")
 
@@ -231,6 +238,12 @@ function crearFebrero() {
 }
 
 function crearMarzo() {
+    var eventos = JSON.parse(localStorage.getItem("eventos") || "[]")
+    var fechasHoras = []
+
+    for (let i = 0; i < eventos.length; i++) {
+        fechasHoras.push(eventos[i].fechaHora)
+    }
 
     var listaOrdenada = crearNodo("ol")
 
@@ -293,6 +306,12 @@ function crearMarzo() {
 }
 
 function crearAbril() {
+    var eventos = JSON.parse(localStorage.getItem("eventos") || "[]")
+    var fechasHoras = []
+
+    for (let i = 0; i < eventos.length; i++) {
+        fechasHoras.push(eventos[i].fechaHora)
+    }
 
     var listaOrdenada = crearNodo("ol")
 
@@ -355,6 +374,12 @@ function crearAbril() {
 }
 
 function crearMayo() {
+    var eventos = JSON.parse(localStorage.getItem("eventos") || "[]")
+    var fechasHoras = []
+
+    for (let i = 0; i < eventos.length; i++) {
+        fechasHoras.push(eventos[i].fechaHora)
+    }
 
     var listaOrdenada = crearNodo("ol")
 
@@ -417,6 +442,12 @@ function crearMayo() {
 }
 
 function crearJunio() {
+    var eventos = JSON.parse(localStorage.getItem("eventos") || "[]")
+    var fechasHoras = []
+
+    for (let i = 0; i < eventos.length; i++) {
+        fechasHoras.push(eventos[i].fechaHora)
+    }
 
     var listaOrdenada = crearNodo("ol")
 
@@ -479,6 +510,12 @@ function crearJunio() {
 }
 
 function crearJulio() {
+    var eventos = JSON.parse(localStorage.getItem("eventos") || "[]")
+    var fechasHoras = []
+
+    for (let i = 0; i < eventos.length; i++) {
+        fechasHoras.push(eventos[i].fechaHora)
+    }
 
     var listaOrdenada = crearNodo("ol")
 
@@ -540,6 +577,12 @@ function crearJulio() {
 }
 
 function crearAgosto() {
+    var eventos = JSON.parse(localStorage.getItem("eventos") || "[]")
+    var fechasHoras = []
+
+    for (let i = 0; i < eventos.length; i++) {
+        fechasHoras.push(eventos[i].fechaHora)
+    }
     var listaOrdenada = crearNodo("ol")
 
     //dias
@@ -599,6 +642,12 @@ function crearAgosto() {
     nombreMes.textContent = "Agosto"
 }
 function crearSeptiembre() {
+    var eventos = JSON.parse(localStorage.getItem("eventos") || "[]")
+    var fechasHoras = []
+
+    for (let i = 0; i < eventos.length; i++) {
+        fechasHoras.push(eventos[i].fechaHora)
+    }
 
     var listaOrdenada = crearNodo("ol")
 
@@ -660,6 +709,12 @@ function crearSeptiembre() {
 }
 
 function crearOctubre() {
+    var eventos = JSON.parse(localStorage.getItem("eventos") || "[]")
+    var fechasHoras = []
+
+    for (let i = 0; i < eventos.length; i++) {
+        fechasHoras.push(eventos[i].fechaHora)
+    }
 
     var listaOrdenada = crearNodo("ol")
 
@@ -727,6 +782,12 @@ function crearOctubre() {
 }
 
 function crearNoviembre() {
+    var eventos = JSON.parse(localStorage.getItem("eventos") || "[]")
+    var fechasHoras = []
+
+    for (let i = 0; i < eventos.length; i++) {
+        fechasHoras.push(eventos[i].fechaHora)
+    }
 
     var listaOrdenada = crearNodo("ol")
 
@@ -787,6 +848,12 @@ function crearNoviembre() {
     nombreMes.textContent = "Noviembre"
 }
 function crearDiciembre() {
+    var eventos = JSON.parse(localStorage.getItem("eventos") || "[]")
+    var fechasHoras = []
+
+    for (let i = 0; i < eventos.length; i++) {
+        fechasHoras.push(eventos[i].fechaHora)
+    }
 
     var listaOrdenada = crearNodo("ol")
 
