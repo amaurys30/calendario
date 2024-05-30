@@ -87,20 +87,16 @@ function crearAnio() {
     adicionarNodoAContenedor(divNoviembre, anio)
     adicionarNodoAContenedor(divDiciembre, anio)
 
+    anio.setAttribute("class", "divAnio")
 
-    return anio
-}
-
-function agregarDiv() {
-    // Obtener el div principal
     var divPrincipal = document.getElementById("divPrincipal")
     // Obtener el nuevo div creado
-    var nuevoDiv = crearAnio()
+    var nuevoDiv = anio
     nuevoDiv.id = "nuevoDivId"
     // Agregar el nuevo div al final del div principal
     divPrincipal.appendChild(nuevoDiv)
-
 }
+
 //vista de meses
 
 var eventos = JSON.parse(localStorage.getItem("eventos") || "[]")
@@ -146,6 +142,7 @@ function crearEnero() {
                 adicionarNodoAContenedor(salto, window[variableName])
                 var evento = crearNodoConTexto("a", "Fecha y hora de evento: "+ fechaHora)
                 evento.setAttribute("href", "#")
+                evento.setAttribute("class", "estiloEvento")
                 adicionarNodoAContenedor(evento, window[variableName])
 
                 evento.addEventListener('click', function() {
@@ -207,6 +204,7 @@ function crearFebrero() {
                 adicionarNodoAContenedor(salto, window[variableName])
                 var evento = crearNodoConTexto("a", "Fecha y hora de evento: "+ fechaHora)
                 evento.setAttribute("href", "#")
+                evento.setAttribute("class", "estiloEvento")
                 adicionarNodoAContenedor(evento, window[variableName])
 
                 evento.addEventListener('click', function() {
@@ -267,6 +265,7 @@ function crearMarzo() {
                 adicionarNodoAContenedor(salto, window[variableName])
                 var evento = crearNodoConTexto("a", "Fecha y hora de evento: "+ fechaHora)
                 evento.setAttribute("href", "#")
+                evento.setAttribute("class", "estiloEvento")
                 adicionarNodoAContenedor(evento, window[variableName])
 
                 evento.addEventListener('click', function() {
@@ -328,6 +327,7 @@ function crearAbril() {
                 adicionarNodoAContenedor(salto, window[variableName])
                 var evento = crearNodoConTexto("a", "Fecha y hora de evento: "+ fechaHora)
                 evento.setAttribute("href", "#")
+                evento.setAttribute("class", "estiloEvento")
                 adicionarNodoAContenedor(evento, window[variableName])
 
                 evento.addEventListener('click', function() {
@@ -389,6 +389,7 @@ function crearMayo() {
                 adicionarNodoAContenedor(salto, window[variableName])
                 var evento = crearNodoConTexto("a", "Fecha y hora de evento: "+ fechaHora)
                 evento.setAttribute("href", "#")
+                evento.setAttribute("class", "estiloEvento")
                 adicionarNodoAContenedor(evento, window[variableName])
 
                 evento.addEventListener('click', function() {
@@ -450,6 +451,7 @@ function crearJunio() {
                 adicionarNodoAContenedor(salto, window[variableName])
                 var evento = crearNodoConTexto("a", "Fecha y hora de evento: "+ fechaHora)
                 evento.setAttribute("href", "#")
+                evento.setAttribute("class", "estiloEvento")
                 adicionarNodoAContenedor(evento, window[variableName])
 
                 evento.addEventListener('click', function() {
@@ -511,6 +513,7 @@ function crearJulio() {
                 adicionarNodoAContenedor(salto, window[variableName])
                 var evento = crearNodoConTexto("a", "Fecha y hora de evento: "+ fechaHora)
                 evento.setAttribute("href", "#")
+                evento.setAttribute("class", "estiloEvento")
                 adicionarNodoAContenedor(evento, window[variableName])
 
                 evento.addEventListener('click', function() {
@@ -570,6 +573,7 @@ function crearAgosto() {
                 adicionarNodoAContenedor(salto, window[variableName])
                 var evento = crearNodoConTexto("a", "Fecha y hora de evento: "+ fechaHora)
                 evento.setAttribute("href", "#")
+                evento.setAttribute("class", "estiloEvento")
                 adicionarNodoAContenedor(evento, window[variableName])
 
                 evento.addEventListener('click', function() {
@@ -629,6 +633,7 @@ function crearSeptiembre() {
                 adicionarNodoAContenedor(salto, window[variableName])
                 var evento = crearNodoConTexto("a", "Fecha y hora de evento: "+ fechaHora)
                 evento.setAttribute("href", "#")
+                evento.setAttribute("class", "estiloEvento")
                 adicionarNodoAContenedor(evento, window[variableName])
 
                 evento.addEventListener('click', function() {
@@ -695,6 +700,7 @@ function crearOctubre() {
                 adicionarNodoAContenedor(salto, window[variableName])
                 var evento = crearNodoConTexto("a", "Fecha y hora de evento: "+ fechaHora)
                 evento.setAttribute("href", "#")
+                evento.setAttribute("class", "estiloEvento")
                 adicionarNodoAContenedor(evento, window[variableName])
 
                 evento.addEventListener('click', function() {
@@ -755,6 +761,7 @@ function crearNoviembre() {
                 adicionarNodoAContenedor(salto, window[variableName])
                 var evento = crearNodoConTexto("a", "Fecha y hora de evento: "+ fechaHora)
                 evento.setAttribute("href", "#")
+                evento.setAttribute("class", "estiloEvento")
                 adicionarNodoAContenedor(evento, window[variableName])
 
                 evento.addEventListener('click', function() {
@@ -814,6 +821,7 @@ function crearDiciembre() {
                 adicionarNodoAContenedor(salto, window[variableName])
                 var evento = crearNodoConTexto("a", "Fecha y hora de evento: "+ fechaHora)
                 evento.setAttribute("href", "#")
+                evento.setAttribute("class", "estiloEvento")
                 adicionarNodoAContenedor(evento, window[variableName])
 
                 evento.addEventListener('click', function() {
@@ -866,16 +874,11 @@ function crearDias() {
     var divDias = crearNodo("div")
     adicionarNodoAContenedor(listaOrdenada, divDias)
     divDias.setAttribute("class", "divDias")
-
-    return divDias
-}
-
-function agregarDias() {
-    // Obtener el div principal
     var divPrincipal = document.getElementById("divPrincipal")
     // Obtener el nuevo div creado
-    var nuevoDiv = crearDias()
+    var nuevoDiv = divDias
     nuevoDiv.id = "nuevoDivId"
     // Agregar el nuevo div al final del div principal
     divPrincipal.appendChild(nuevoDiv)
 }
+

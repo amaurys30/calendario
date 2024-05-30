@@ -8,33 +8,34 @@
     <script src="../js/gestionevento.js"></script>
     <script src="../js/evento.js"></script>
     <script src="../js/utilidades.js"></script>
+    <link rel="stylesheet" href="../css/estilos.css">
 
     <script>
         function adicionarNombreATabla() {
             var nombreTematico = document.getElementById('nombreTematico')
 
-            if(nombreTematico.value.length > 0){
+            if (nombreTematico.value.length > 0) {
                 var tablaNombresTematicos = document.getElementById('tablaParticipantes')
                 var fila = tablaNombresTematicos.insertRow(-1)//para agregar al inicio 0
                 //se configura la columna con el nombre
                 var columnaUno = fila.insertCell(0)
                 var textoColumna = document.createTextNode(nombreTematico.value)
                 columnaUno.appendChild(textoColumna)
-                
+
                 nombreTematico.value = ''
 
                 //se configura la columna con los botones
 
                 var botonEliminar = document.createElement('button')
                 botonEliminar.textContent = 'Eliminar'
-                botonEliminar.addEventListener('click', function(){
+                botonEliminar.addEventListener('click', function () {
                     fila.parentNode.removeChild(fila)
                 })
 
                 var columnaDos = fila.insertCell(1)
                 columnaDos.appendChild(botonEliminar)
-                
-            }else{
+
+            } else {
                 alert('Debe digitar un nombre para ser adicionado')
             }
             nombreTematico.focus()
@@ -44,31 +45,37 @@
 
 <body>
 
-        <h1>Evento</h1>
-        <label for="fechaYHora">Fecha y hora</label>
-        <input name="fechaYHora" type="datetime-local" id="fechaHora">
+    <h1 class="tituloFormulario">Gestion de eventos</h1>
+    <div class="flexPrincipal">
+        <div class="divFlexFormulario">
+            <label for="fechaYHora">Fecha y hora</label>
+            <input name="fechaYHora" type="datetime-local" id="fechaHora">
 
-        <label for="descripcion">Descripcion</label>
-        <textarea name="descripcion" id="descripcion"></textarea>
+            <label for="descripcion">Descripcion</label>
+            <textarea name="descripcion" id="descripcion"></textarea>
 
-        <label for="">Participante</label>
-        <input id="nombreTematico" type="text">
-        <button onclick="adicionarNombreATabla()">Adicionar</button>
-        <table border="1" id="tablaParticipantes">
-            <caption>Participantes adicionados</caption>
-            <tr>
-                <td>Participantes</td>
-                <td>Acciones</td>
+            <label for="">Participante</label>
+            <input id="nombreTematico" type="text">
+            <button onclick="adicionarNombreATabla()">Adicionar participante</button>
+            <table border="1" id="tablaParticipantes">
+                <caption>Participantes adicionados</caption>
+                <tr>
+                    <td>Participantes</td>
+                    <td>Acciones</td>
 
-            </tr>
-        </table>
+                </tr>
+            </table>
+        </div>
+        <div class="divFlexBoton">
+            <button onclick="guardarEvento()">Guardar evento</button>
+            <button onclick="actualizarEvento()">actualizar evento</button>
+            <button onclick="eliminarEvento()">eliminar evento</button>
+            <button onclick="consultarEvento()">consultar evento por fecha</button>
+            <button onclick="nuevoEvento()">nuevo evento</button>
+        </div>
+    </div>
+    
 
-        <button onclick="guardarEvento()">Guardar evento</button>
-        <button onclick="actualizarEvento()">actualizar evento</button>
-        <button onclick="eliminarEvento()">eliminar evento</button>
-        <button onclick="consultarEvento()">consultar evento</button>
-        <button onclick="nuevoEvento()">nuevo evento</button>
-        <!-- <button onclick="listarEventos()">listar evento</button> -->
 
 
 </body>

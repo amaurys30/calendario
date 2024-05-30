@@ -1,8 +1,8 @@
-body{
+body {
     margin: 0%;
 }
 
-.gridContenedor{
+.gridContenedor {
     display: grid;
     grid-template-columns: 20% auto;
     grid-template-rows: 85px 540px;
@@ -10,7 +10,7 @@ body{
 }
 
 /* primer div */
-.divMenu{
+.divMenu {
     grid-column: span 2;
     display: flex;
     border: solid 1px;
@@ -18,28 +18,28 @@ body{
     align-items: center;
 }
 
-.divMenu img{
+.divMenu img {
     width: 60px;
     height: 60px;
 }
 
-.mesSeleccionado{
+.mesSeleccionado {
     margin-left: 100px;
     margin-right: 25%;
 }
 
-.divSeleccion{
+.divSeleccion {
     margin-right: 30px;
 }
 
-.divSeleccion select{
+.divSeleccion select {
     height: 40px;
     width: 100px;
     border-radius: 10px;
 }
 
 /* segundo div */
-.divEvento{
+.divEvento {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -48,28 +48,29 @@ body{
     gap: 10px;
 }
 
-.divEvento button{
-    
+.divEvento button {
+
     margin-top: 30px;
     width: 45%;
     height: 50px;
     border-radius: 10px;
 }
 
-.divListaEvento ol{
+.divListaEvento ol {
     list-style: none;
     padding-left: 0;
-    li{
+
+    li {
         margin-top: 15px;
     }
 }
 
 /* tercer div */
-.divMeses{
+.divMeses {
     text-align: center;
 }
 
-.divMeses ol{
+.divMeses ol {
     list-style: none;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -77,57 +78,65 @@ body{
     margin: 0;
 }
 
-.divMeses li{
+.divMeses li {
     /*border: solid 1px;*/
     height: 90px;
 }
 
-.primerDiaEnero{
+.primerDiaEnero {
     grid-column-start: 1;
 }
 
-.primerDiaFebreo{
+.primerDiaFebreo {
     grid-column-start: 4;
 }
 
-.primerDiaMarzo{
+.primerDiaMarzo {
     grid-column-start: 5;
 }
 
-.primerDiaAbril{
+.primerDiaAbril {
     grid-column-start: 1;
 }
-.primerDiaMayo{
+
+.primerDiaMayo {
     grid-column-start: 3;
 }
-.primerDiaJunio{
+
+.primerDiaJunio {
     grid-column-start: 6;
 }
-.primerDiaJulio{
+
+.primerDiaJulio {
     grid-column-start: 1;
 }
-.primerDiaAgosto{
+
+.primerDiaAgosto {
     grid-column-start: 4;
 }
-.primerDiaSeptiembre{
+
+.primerDiaSeptiembre {
     grid-column-start: 7;
 }
-.primerDiaOctubre{
+
+.primerDiaOctubre {
     grid-column-start: 2;
 }
-.primerDiaNoviembre{
+
+.primerDiaNoviembre {
     grid-column-start: 5;
 }
-.primerDiaDiciembre{
+
+.primerDiaDiciembre {
     grid-column-start: 7;
 }
 
 /*estilos para dias*/
-.divDias{
+.divDias {
     text-align: center;
 }
 
-.divDias ol{
+.divDias ol {
     list-style: none;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -135,28 +144,84 @@ body{
     margin: 0;
 }
 
-.divDias li{
+.divDias li {
     border-right: solid 1px;
     border-bottom: solid 1px;
     height: 90px;
 }
 
-/* estilos para formulario */
-.flexContenedor{
-    display: flex;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.divContenedor{
-    width: 50%;
-
-}
-.table{
-    width: 100%;
-    border: 1px solid black;
-}
-
-.table td{
+.tituloFormulario {
     text-align: center;
+    margin: 50px;
+}
+
+.flexPrincipal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-left: 300px;
+    margin-right: 300px;
+    background-color: rgb(239, 240, 240);
+}
+
+.divFlexFormulario {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+
+    button {
+        background-color: aqua;
+        border-color: rgb(187, 208, 226);
+        border-radius: 10px;
+        height: 30px;
+    }
+}
+
+.divFlexBoton {
+    display: flex;
+    gap: 10px;
+    height: 30px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.divFlexBoton button {
+    background-color: aqua;
+    border-color: rgb(187, 208, 226);
+    border-radius: 10px;
+}
+
+.estiloEvento{
+    list-style: none;
+    background-color: aquamarine;
+    color: black;
+    font-weight: bold;
+}
+
+/* año */
+
+
+/* .divAnio {
+
+    text-align: center;
+} */
+
+.divAnio {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    gap: 7px;
+}
+
+.divAnio div {
+    border: 1px solid black;
+    height: 90px;
+    background-color: aqua;
 }

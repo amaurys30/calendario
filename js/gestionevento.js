@@ -1,9 +1,16 @@
 function guardarEvento() {
     //localStorage.setItem("empleados", "[]")
-    var eventos = JSON.parse(localStorage.getItem("eventos") || "[]")
 
     var fechaHora = document.getElementById("fechaHora")
     var descripcion = document.getElementById("descripcion")
+    // Verificar si los campos obligatorios están llenos
+    if (!fechaHora.value || !descripcion.value) {
+        alert("Por favor, complete todos los campos obligatorios (fecha y descripción).")
+        nuevoEvento()
+        return; // Salir de la función sin guardar el evento
+    }
+
+    var eventos = JSON.parse(localStorage.getItem("eventos") || "[]")
     // Obtener los datos de los participantes de la tabla
     const tabla = document.getElementById('tablaParticipantes');
     const filas = tabla.getElementsByTagName('tr');
@@ -22,8 +29,8 @@ function guardarEvento() {
     eventos.push(evento)
     // Almacenar en localStorage (puede usarse para almacenamiento persistente en el navegador)
     localStorage.setItem('eventos', JSON.stringify(eventos));
-
-    nuevoEvento();
+    alert("Evento guardado exitosamente")
+    nuevoEvento()
 }
 
 function actualizarEvento() {
@@ -51,6 +58,7 @@ function actualizarEvento() {
         eventos[indiceEvento].participantes = participantes;
         localStorage.setItem("eventos", JSON.stringify(eventos));
     }
+    alert("Evento actualizado exitosamente")
     nuevoEvento()
 }
 
@@ -69,19 +77,27 @@ function eliminarEvento() {
     }
 
     if (indiceEvento !== -1) {
-        eventos.splice(indiceEvento, 1);
-        localStorage.setItem("eventos", JSON.stringify(eventos));
+       // eventos.splice(indiceEvento, 1);
+        //localStorage.setItem("eventos", JSON.stringify(eventos));
+        var confirmacion = confirm("¿Está seguro de que desea eliminar este evento?");
+        if (confirmacion) {
+            eventos.splice(indiceEvento, 1);
+            localStorage.setItem("eventos", JSON.stringify(eventos));
+            nuevoEvento();
+        }
     }
-    nuevoEvento()
+    //nuevoEvento()
 }
 
 function consultarEvento() {
     var eventos = JSON.parse(localStorage.getItem("eventos") || "[]");
 
     var fechaHora = document.getElementById("fechaHora").value;
+    var eventoEncontrado = false;
 
     for (let i = 0; i < eventos.length; i++) {
         if (eventos[i].fechaHora == fechaHora /*&& eventos[i].descripcion == descripcion*/) {
+            eventoEncontrado = true;
             document.getElementById('descripcion').textContent = eventos[i].descripcion
 
             // Mostrar participantes en la tabla
@@ -100,6 +116,9 @@ function consultarEvento() {
             }
             break;
         }
+    }
+    if (!eventoEncontrado) {
+        alert('No hay eventos creados en esta fecha. Por favor, verifique la fecha.');
     }
 }
 

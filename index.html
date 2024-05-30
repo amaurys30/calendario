@@ -69,13 +69,13 @@
             var seleccion = document.getElementById("fecha").value;
             if (seleccion === "dia") {
                 eliminarDiv()
-                agregarDias()
+                crearDias()
             } else if (seleccion === "mes") {
                 eliminarDiv()
                 seleccionMes()
             } else if (seleccion === "anio") {
                 eliminarDiv()
-                agregarDiv()
+                crearAnio()
             } else {
                 eliminarDiv()
                 seleccionMes()
@@ -98,85 +98,7 @@
         for (let i = 0; i < eventos.length; i++) {
             fechasHoras.push(eventos[i].fechaHora)
         }
-        /*
-                function obtenerMeses() {
-                    const meses = fechasHoras.map(fechaHora => {
-                        const fecha = new Date(fechaHora);
-                        return fecha.getMonth() + 1; // Ajuste para que enero sea 1 y diciembre sea 12
-                    });
         
-                    //mostrarMeses(meses);
-                    return meses
-                }
-        
-                function obtenerDias() {
-                    const dias = fechasHoras.map(fechaHora => {
-                        const fecha = new Date(fechaHora);
-                        return fecha.getDate(); // Obtener el día del mes
-                    });
-        
-                    return dias
-                }
-        
-                function adicionarEventoAMes() {
-                    var meses = obtenerMeses()
-        
-                    meses.forEach(mes => {
-                        switch (mes) {
-                            case 1:
-                                console.log("enero")
-                                break;
-                            case 2:
-                                console.log("febrero")
-                                break;
-                            case 3:
-                                console.log("marzo")
-                                break;
-                            case 4:
-                                console.log("abril")
-                                break;
-                            case 5:
-                                console.log("mayo")
-                                break;
-                            case 6:
-                                console.log("junio")
-                                break;
-                            case 7:
-                                console.log("julio")
-                                break;
-                            case 8:
-                                console.log("agosto")
-                                break;
-                            case 9:
-                                console.log("septiembre")
-                                break;
-                            case 10:
-                                console.log("octubre")
-                                break;
-                            case 11:
-                                console.log("noviembre")
-                                break;
-                            case 12:
-                                console.log("diciembre")
-                                break;
-                            default:
-                                console.log("ningun mes")
-                                break;
-                        }
-                    })
-                }
-                
-                function mostrarMeses(meses) {
-                    const listaMeses = document.getElementById('listaMeses');
-                    listaMeses.innerHTML = '';
-        
-                    meses.forEach(mes => {
-                        const li = document.createElement('li');
-                        li.textContent = mes;
-                        listaMeses.appendChild(li);
-                    });
-                }
-        */
     </script>
 
     <div class="gridContenedor" id="divPrincipal">
@@ -198,18 +120,18 @@
             <div class="divSeleccion">
                 <label for="mes">Seleccionar Mes:</label>
                 <select id="mes" name="mes" onchange="seleccionMes()">
-                    <option value="enero">Enero</option>
-                    <option value="febrero">Febrero</option>
-                    <option value="marzo">Marzo</option>
-                    <option value="abril">Abril</option>
-                    <option value="mayo">Mayo</option>
-                    <option value="junio">Junio</option>
-                    <option value="julio">Julio</option>
-                    <option value="agosto">Agosto</option>
-                    <option value="septiembre">Septiembre</option>
-                    <option value="octubre">Octubre</option>
-                    <option value="noviembre">Noviembre</option>
-                    <option value="diciembre">Diciembre</option>
+                    <option onclick="eliminarDiv(), crearEnero()" value="enero">Enero</option>
+                    <option onclick="eliminarDiv(), crearFebrero()" value="febrero">Febrero</option>
+                    <option onclick="eliminarDiv(), crearMarzo()" value="marzo">Marzo</option>
+                    <option onclick="eliminarDiv(), crearAbril()" value="abril">Abril</option>
+                    <option onclick="eliminarDiv(), crearMayo()" value="mayo">Mayo</option>
+                    <option onclick="eliminarDiv(), crearJunio()" value="junio">Junio</option>
+                    <option onclick="eliminarDiv(), crearJulio()" value="julio">Julio</option>
+                    <option onclick="eliminarDiv(), crearAgosto()" value="agosto">Agosto</option>
+                    <option onclick="eliminarDiv(), crearSeptiembre()" value="septiembre">Septiembre</option>
+                    <option onclick="eliminarDiv(), crearOctubre()" value="octubre">Octubre</option>
+                    <option onclick="eliminarDiv(), crearNoviembre()" value="noviembre">Noviembre</option>
+                    <option onclick="eliminarDiv(), crearDiciembre()" value="diciembre">Diciembre</option>
 
                 </select>
             </div>
